@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Daily_Allowance
 {
@@ -6,7 +10,19 @@ namespace Daily_Allowance
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            SuperClass superClass = new();
+
+            superClass.Fill();
+
+            superClass.CountDays();
+
+            superClass.Print();
+
+            Console.ReadKey();
+
+            Console.WriteLine("Керя пидор");
+
+            Console.ReadKey();
         }
     }
 }
