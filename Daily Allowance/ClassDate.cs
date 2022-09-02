@@ -12,12 +12,7 @@ namespace Daily_Allowance
         /// <summary>
         /// Сумма за один день
         /// </summary>
-        protected static int summ = 0;
-        public int Summ
-        {
-            get { return summ; }
-            set { summ = value; }
-        }
+        static public int Summ { get; set; }
 
         /// <summary>
         ///Дата отъезда 

@@ -17,7 +17,7 @@ namespace Daily_Allowance
 
             int result = int.Parse(Console.ReadLine());
 
-            summ = result;
+            Summ = result;
         }
 
         /// <summary>
@@ -65,13 +65,13 @@ namespace Daily_Allowance
         {
             Console.ForegroundColor = ConsoleColor.Green;
 
-            CenterX = (Console.WindowWidth / 2) - ($"Сумма ваших суточных составляет {(CountDays() + 1) * summ} рублей".Length / 2);
+            CenterX = (Console.WindowWidth / 2) - ($"Сумма ваших суточных составляет {(CountDays() + 1) * Summ} рублей".Length / 2);
 
             CenterY = (Console.WindowHeight / 2) - 1;
 
             Console.SetCursorPosition(CenterX, CenterY);
 
-            Console.Write($"Сумма ваших суточных составляет {(CountDays() + 1) * summ} рублей");
+            Console.Write($"Сумма ваших суточных составляет {(CountDays() + 1) * Summ} рублей");
 
             Console.ResetColor();
         }
