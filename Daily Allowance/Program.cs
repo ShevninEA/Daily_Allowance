@@ -19,6 +19,8 @@ namespace Daily_Allowance
                 superClass.CountDays();
 
                 superClass.PrintRight();
+
+
             }
             catch (Exception)
             {
@@ -29,6 +31,18 @@ namespace Daily_Allowance
                 goto Found;
             }
 
+            Console.WriteLine("\nЕще раз? (Да-Y / Нет-N)");
+
+            if (Console.ReadKey().Key == ConsoleKey.Y)
+            {
+                Console.Clear();
+
+                goto Found;
+            }
+            else
+            {
+                Environment.Exit(0);
+            }
             Console.ReadLine();
         }
     }

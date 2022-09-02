@@ -1,7 +1,7 @@
 ﻿
 namespace Daily_Allowance
 {
-    class ClassDate
+    class ClassValue
     {
         /// <summary>
         /// Свойства для центрирования текста

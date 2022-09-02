@@ -2,7 +2,7 @@
 
 namespace Daily_Allowance
 {
-    class SuperClass : ClassDate
+    class SuperClass : ClassValue
     {
         /// <summary>
         /// Ввод данных о ежедневной сумме
