@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Daily_Allowance
 {
@@ -12,17 +8,28 @@ namespace Daily_Allowance
         {
             SuperClass superClass = new();
 
-            superClass.Fill();
+            Found:
 
-            superClass.CountDays();
+            try
+            {
+                SuperClass.ValuesSumm();
 
-            superClass.Print();
+                superClass.Info();
 
-            Console.ReadKey();
+                superClass.CountDays();
 
-            Console.WriteLine("Керя пидор");
+                superClass.PrintRight();
+            }
+            catch (Exception)
+            {
+                superClass.PrintExp();
 
-            Console.ReadKey();
+                Console.Clear();
+
+                goto Found;
+            }
+
+            Console.ReadLine();
         }
     }
 }

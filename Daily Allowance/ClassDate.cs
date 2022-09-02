@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Daily_Allowance
 {
     class ClassDate
     {
         /// <summary>
+        /// Свойства для центрирования текста
+        /// </summary>
+        public int CenterX { get; set; }
+        public int CenterY { get; set; }
+
+        /// <summary>
         /// Сумма за один день
         /// </summary>
-        protected int summ = 1500;
-
+        protected static int summ = 0;
         public int Summ
         {
             get { return summ; }

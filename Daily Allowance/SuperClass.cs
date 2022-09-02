@@ -5,13 +5,29 @@ namespace Daily_Allowance
     class SuperClass : ClassDate
     {
         /// <summary>
-        /// Ввод дат отъезда и приезда
+        /// Ввод данных о ежедневной сумме
         /// </summary>
-        public void Fill() 
+        public static void ValuesSumm()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
 
-            Console.WriteLine("Введите дату отъезда в формате 01.01.2000");
+            Console.WriteLine("\nВведите сумму дневной нормы");
+
+            Console.ResetColor();
+
+            int result = int.Parse(Console.ReadLine());
+
+            summ = result;
+        }
+
+        /// <summary>
+        /// Ввод дат отъезда и приезда
+        /// </summary>
+        public void Info() 
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+
+            Console.WriteLine("\nВведите дату отъезда в формате 01.01.2000");
 
             Console.ResetColor();
 
@@ -19,11 +35,13 @@ namespace Daily_Allowance
 
             Console.ForegroundColor = ConsoleColor.Yellow;
 
-            Console.WriteLine("Введите дату приезда в формате 01.01.2000");
+            Console.WriteLine("\nВведите дату приезда в формате 01.01.2000");
 
             Console.ResetColor();
 
             DateEnd = Console.ReadLine();
+
+            Console.ResetColor();
         }
 
         /// <summary>
@@ -31,43 +49,49 @@ namespace Daily_Allowance
         /// </summary>
         public double CountDays()
         {
-            try
-            {
-                DateTime start = DateTime.Parse(DateStart);
+            DateTime start = DateTime.Parse(DateStart);
 
-                DateTime end = DateTime.Parse(DateEnd);
+            DateTime end = DateTime.Parse(DateEnd);
 
-                double result = (end - start).TotalDays;
+            double result = (end - start).TotalDays;
 
-                return result;
-            }
-            catch (Exception)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-
-                int centerX = (Console.WindowWidth / 2) - ("Вы ввели несуществующую дату".Length / 2);
-                int centerY = (Console.WindowHeight / 2) - 1;
-                Console.SetCursorPosition(centerX, centerY);
-                Console.Write("Вы ввели несуществующую дату");
-
-                Console.ReadLine();
-
-                throw;
-            }
+            return result;
         }
 
         /// <summary>
-        /// Вывод на экран
+        /// Вывод на экран в случае верной работы программы
         /// </summary>
-        public void Print()
+        public void PrintRight()
         {
             Console.ForegroundColor = ConsoleColor.Green;
 
-            int centerX = (Console.WindowWidth / 2) - ($"Сумма ваших суточных составляет {(CountDays() + 1) * summ} рублей".Length / 2);
-            int centerY = (Console.WindowHeight / 2) - 1;
-            Console.SetCursorPosition(centerX, centerY);
+            CenterX = (Console.WindowWidth / 2) - ($"Сумма ваших суточных составляет {(CountDays() + 1) * summ} рублей".Length / 2);
+
+            CenterY = (Console.WindowHeight / 2) - 1;
+
+            Console.SetCursorPosition(CenterX, CenterY);
+
             Console.Write($"Сумма ваших суточных составляет {(CountDays() + 1) * summ} рублей");
 
+            Console.ResetColor();
+        }
+
+        /// <summary>
+        /// Вывод на экран в случае ошибки работы программы
+        /// </summary>
+        public void PrintExp()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+
+            CenterX = (Console.WindowWidth / 2) - ("Вы ввели некорректные данные".Length / 2);
+
+            CenterY = (Console.WindowHeight / 2) - 1;
+
+            Console.SetCursorPosition(CenterX, CenterY);
+
+            Console.Write("Вы ввели некорректные данные");
+
+            Console.ReadLine();
         }
     }
 }
